@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Clientes</title>
+</head>
+<body>
+    <h1>Clientes</h1>
+
+    <a href="{% url 'client_create' %}">+ Adicionar Cliente</a>
+    <br><br>
+
+    <table border="1" cellpadding="8">
+        <tr>
+            <th>Nome</th>
+            <th>Telefone</th>
+            <th>CNH</th>
+        </tr>
+
+        {% for client in clients %}
+        <tr>
+            <td><a href="{% url 'client_detail' client.id %}">{{ client.name }}</a></td>
+            <td>{{ client.phone }}</td>
+            <td>{{ client.cnh }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>
