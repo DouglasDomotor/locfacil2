@@ -20,3 +20,8 @@ def car_create(request):
         form = CarForm()
 
     return render(request, 'cars/car_create.html', {'form': form})
+
+def car_list(request):
+    cars = Car.objects.all()
+    return render(request, "car_list.html", {"cars": cars})
+

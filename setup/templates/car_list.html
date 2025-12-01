@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Lista de Carros{% endblock %}
+
+{% block content %}
+<h2>Carros Cadastrados</h2>
+
+<ul>
+    {% for car in cars %}
+        <li>{{ car.plate }} — {{ car.model }} — {{ car.year }}</li>
+    {% empty %}
+        <li>Nenhum carro cadastrado.</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
