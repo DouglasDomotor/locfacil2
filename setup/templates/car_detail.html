@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Carro {{ car.plate }}{% endblock %}
+
+{% block content %}
+<h2>Detalhes do Carro</h2>
+
+<p><b>Placa:</b> {{ car.plate }}</p>
+<p><b>Modelo:</b> {{ car.model }}</p>
+<p><b>Ano:</b> {{ car.year }}</p>
+<p><b>Quilometragem:</b> {{ car.km }}</p>
+
+<a href="/cars/">⬅ Voltar para lista</a>
+{% endblock %}
