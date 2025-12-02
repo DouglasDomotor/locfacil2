@@ -10,5 +10,8 @@
 <p><b>Ano:</b> {{ car.year }}</p>
 <p><b>Quilometragem:</b> {{ car.km }}</p>
 
+<a href="/cars/{{ car.id }}/edit/">✏ Editar</a>
+<br><br>
 <a href="/cars/">⬅ Voltar para lista</a>
+
 {% endblock %}
