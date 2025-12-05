@@ -33,3 +33,11 @@ def car_edit(request, car_id):
         form = CarForm(instance = car)
 
     return render(request, 'car_form.html', {'form': form})
+
+def car_delete(request, car_id):
+    car =get_object_or_404(Car, id=car_id)
+
+    if request.method == 'POST':
+        car.delete()
+        return redirect('car_list')
+    return render(request, 'car_comfirm_delete.html', {'car':car})
