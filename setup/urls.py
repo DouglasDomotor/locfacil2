@@ -1,9 +1,10 @@
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from cars.views import car_list, car_detail, car_create, car_edit,car_delete
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('clients/', include('clients.urls')),
     path('cars/', car_list, name="car_list"),
     path('cars/new/', car_create, name="car_create"),
     path('cars/<int:car_id>/', car_detail, name="car_detail"),

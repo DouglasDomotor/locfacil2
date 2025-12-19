@@ -1,8 +1,9 @@
 from django.urls import path
-from . import views
+from .views import client_list, client_detail, client_create
 
 urlpatterns = [
-    path('', views.client_list, name='client_list'),
-    path('novo/', views.client_create, name='client_create'),
-    path('<int:client_id>/', views.client_detail, name='client_detail'),
+    path('list/', client_list, name='client_list'),
+    path('new/', client_create, name='client_create'),
+    path('<int:client_id>/', client_detail, name='client_detail'),
 ]
+
