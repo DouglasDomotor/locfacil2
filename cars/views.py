@@ -4,11 +4,11 @@ from .forms import CarForm
 
 def car_list(request):
     cars = Car.objects.all()
-    return render(request, "car_list.html", {"cars": cars})
+    return render(request, "cars/car_list.html", {"cars": cars})
 
 def car_detail(request, car_id):
     car = get_object_or_404(Car, id=car_id)
-    return render(request, 'car_detail.html', {'car': car})
+    return render(request, 'cars/car_detail.html', {'car': car})
 
 def car_create(request):
     if request.method == 'POST':
@@ -19,7 +19,7 @@ def car_create(request):
     else:
         form = CarForm()
 
-    return render(request, 'car_form.html', {'form': form})
+    return render(request, 'cars/car_form.html', {'form': form})
 
 def car_edit(request, car_id):
     car = get_object_or_404(Car, id=car_id)
@@ -32,7 +32,7 @@ def car_edit(request, car_id):
     else:
         form = CarForm(instance = car)
 
-    return render(request, 'car_form.html', {'form': form})
+    return render(request, 'cars/car_form.html', {'form': form})
 
 def car_delete(request, car_id):
     car =get_object_or_404(Car, id=car_id)
@@ -40,4 +40,4 @@ def car_delete(request, car_id):
     if request.method == 'POST':
         car.delete()
         return redirect('car_list')
-    return render(request, 'car_comfirm_delete.html', {'car':car})
+    return render(request, 'cars/car_comfirm_delete.html', {'car':car})

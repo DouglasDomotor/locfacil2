@@ -10,10 +10,10 @@
 <p><b>Ano:</b> {{ car.year }}</p>
 <p><b>Quilometragem:</b> {{ car.km }}</p>
 
-<a href="/cars/{{ car.id }}/edit/">✏ Editar</a>
+<a href="{% url 'car_edit' car.id %}">✏ Editar</a>
 <br><br>
-<a href="/cars/{{ car.id }}/delete/" style="color: red;">🗑 Excluir</a>
+<a href="{% url 'car_delete' car.id %}" style="color: red;">🗑 Excluir</a>
 <br><br>
-<a href="/cars/">⬅ Voltar para lista</a>
+<a href="{% url 'car_list' %}">⬅ Voltar para lista</a>
 
 {% endblock %}
