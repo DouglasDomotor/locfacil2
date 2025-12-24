@@ -19,7 +19,14 @@ def car_create(request):
     else:
         form = CarForm()
 
-    return render(request, 'cars/car_form.html', {'form': form})
+    return render(
+        request,
+        'cars/car_form.html', 
+        {
+            'form': form,
+            'title': 'Adicionar Carro',
+        }
+    )
 
 def car_edit(request, car_id):
     car = get_object_or_404(Car, id=car_id)
@@ -32,7 +39,14 @@ def car_edit(request, car_id):
     else:
         form = CarForm(instance = car)
 
-    return render(request, 'cars/car_form.html', {'form': form})
+    return render(
+        request, 
+        'cars/car_form.html', 
+        {
+            'form': form,
+            'title': 'Editar Carro',
+        }
+    )
 
 def car_delete(request, car_id):
     car =get_object_or_404(Car, id=car_id)

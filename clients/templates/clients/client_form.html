@@ -1,9 +1,6 @@
 {% extends "base.html" %}
-
-{% block title %}Novo Carro{% endblock %}
-
 {% block content %}
-<h2>{{ title }}</h2>
+<h2>Cliente</h2>
 
 <form method="post">
     {% csrf_token %}
@@ -11,5 +8,5 @@
     <button type="submit">Salvar</button>
 </form>
 
-<a href="{% url 'car_list' %}">⬅ Voltar</a>
+<a href="{% url 'client_detail' client.id %}">Voltar</a>
 {% endblock %}
