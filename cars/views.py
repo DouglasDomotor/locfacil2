@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from.models import Car
+from .models import Car
 from .forms import CarForm 
 
 def car_list(request):

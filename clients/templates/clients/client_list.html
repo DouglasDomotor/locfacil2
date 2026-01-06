@@ -1,13 +1,10 @@
 {% extends "base.html" %}
 
-{% block title %}Lista de Carros{% endblock %}
+{% block title %}Lista de Clientes{% endblock %}
 
 {% block content %}
 
-<h2>Clientes</h2>
-
-<a href="{% url 'client_create' %}">+ Adicionar Cliente</a>
-<br><br>
+<h2>Clientes  Cadastrados</h2>
 
 <table border="1" cellpadding="8">
     <tr>
@@ -24,4 +21,8 @@
     </tr>
     {% endfor %}
 </table>
+
+<br><br>
+<a href="{% url 'client_create' %}">+ Adicionar Cliente</a>
+
 {% endblock %}

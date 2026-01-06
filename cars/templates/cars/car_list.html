@@ -3,16 +3,28 @@
 {% block title %}Lista de Carros{% endblock %}
 
 {% block content %}
+
 <h2>Carros Cadastrados </h2>
 
-<ul>
-    {% for car in cars %}
-        <li>{{ car.plate }} — {{ car.model }} — {{ car.year }}</li>
-    {% empty %}
-        <li>Nenhum carro cadastrado.</li>
-    {% endfor %}
-</ul>
+<table border="1" cellpadding="8">
+    <tr>
+        <th>Carro</th>
+        <th>Placa</th>
+        <th>Ano</th>
+        <th>Km</th>
+    </tr>
 
-#<a href="{% url 'car_create' %}">+ Adicionar novo carro</a>
+    {% for car in cars %}
+    <tr>
+        <td><a href="{% url 'car_detail' car.id %}">{{ car.model }}</a></td>
+        <td></a>{{ car.plate }}</td>
+        <td>{{ car.year }}</td>
+        <td>{{ car.km }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<br><br>
+<a href="{% url 'car_create' %}">Adicionar Carro</a>
 
 {% endblock %}
