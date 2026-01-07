@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Contratos</h2>
+
+<a href='/rentals/new/'>+ Novo Contrato</a>
+
+<ul>
+{% for contract in contracts %}
+    <li>
+        {{ contract.client }} - {{ contract.car }} - {{ contract.status }}  
+        
+        {% if contract.status == 'active' %}
+        <a href="/rentals/{{rental.id }}/finish/">Encerrar</a>   
+        {% endif %}
+       
+    </li>
+{% endfor %}
+</ul>
+{% endblock %}

@@ -8,7 +8,7 @@ def client_list(request):
 
 def client_detail(request, client_id):
     client = get_object_or_404(Client, id=client_id)
-    return render(request, 'clients/client_detail2.html', {'client': client})
+    return render(request, 'clients/client_detail.html', {'client': client})
 
 def client_create(request):
     if request.method == 'POST':

@@ -1,18 +1,16 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <title>Detalhes do Cliente</title>
-</head>
-<body>
-    <h1>{{ client.name }}</h1>
+{% extends "base.html" %}
 
-    <ul>
-        <li><strong>Telefone:</strong> {{ client.phone }}</li>
-        <li><strong>CNH:</strong> {{ client.cnh }}</li>
-    </ul>
+{% block title %} Cliente {{ client.name }}{% endblock %}
 
-    <a href="{% url 'client_list' %}">Voltar</a>
-    <a href="{% url 'client_edit' client.id %}">Editar</a><br>
-</body>
-</html>
+{% block content %}
+<h2>Detalhes do Cliente</h2>
+
+<p><b>Nome:</b> {{ client.name }}</p>
+<p><b>Telefone:</b> {{ client.phone }}</p>
+<p><b>Cnh:</b> {{ client.cnh }}</p>
+
+<a href="{% url 'client_edit' client.id %}">✏ Editar</a>
+<br><br>
+<a href="{% url 'client_list' %}">⬅ Voltar para lista</a>
+
+{% endblock %}
