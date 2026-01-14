@@ -17,7 +17,7 @@ class Car(models.Model):
 
     def __str__(self):
         return f"{self.model} - {self.plate}"
-    
+
     @property
     def final_status(self):
         if self.status == 'manutencao':
@@ -25,3 +25,4 @@ class Car(models.Model):
         if self.rental_set.filter(active=True).exists():
             return 'Alugado'
         return 'Disponivel'
+
