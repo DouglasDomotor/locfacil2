@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from datetime import date
 from .models import Rental
 from .forms import RentalForm
 
@@ -12,7 +13,7 @@ def rental_create(request):
         if form.is_valid():
             car = form.cleaned_data['car']
 
-            if Rental.objects.filter(car=car, status='active').exists():
+            if Rental.objects.filter(car=car, active=True).exists():
                 form.add_error('car', 'Este carro já está alugado.')
             else:
                 form.save()
@@ -26,8 +27,8 @@ def rental_create(request):
 def rental_finish(request, rental_id):
     contract = get_object_or_404(Rental, id=rental_id)
 
-    contract.status = 'finished'
-    contract.end_date = contract.start_date or contract.start_date
+    contract.active = False
+    contract.end_date = date.today()
     contract.save()
 
     return redirect('rental_list')

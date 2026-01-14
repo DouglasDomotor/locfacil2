@@ -23,16 +23,7 @@ class Rental(models.Model):
     km_start = models.IntegerField(null=True,blank=True)
     km_end = models.IntegerField(null=True,blank=True)
 
-    STATUS_CHOICES = [
-        ('active', 'Ativo'),
-        ('finished', 'Encerrado'),
-    ]
-
-    status = models.CharField(
-        max_length=10,
-        choices=STATUS_CHOICES,
-        default='active'
-    )
+    active = models.BooleanField(default=True)
 
     def __str__(self):
         return f"{self.car} alugado por {self.client}"

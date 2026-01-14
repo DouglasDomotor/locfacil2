@@ -2,15 +2,15 @@
 {% block content %}
 <h2>Contratos</h2>
 
-<a href='/rentals/new/'>+ Novo Contrato</a>
+<a href="{% url 'rental_create' %}">+ Novo Contrato</a>
 
 <ul>
 {% for contract in contracts %}
     <li>
-        {{ contract.client }} - {{ contract.car }} - {{ contract.status }}  
+        {{ contract.client }} - {{ contract.car }}
         
-        {% if contract.status == 'active' %}
-        <a href="/rentals/{{rental.id }}/finish/">Encerrar</a>   
+        {% if contract.active %}
+        <a href="{% url 'rental_finish' contract.id %}">Encerrar</a>   
         {% endif %}
        
     </li>
