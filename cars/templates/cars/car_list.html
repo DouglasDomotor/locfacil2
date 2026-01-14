@@ -12,6 +12,7 @@
         <th>Placa</th>
         <th>Ano</th>
         <th>Km</th>
+        <th>status</th>
     </tr>
 
     {% for car in cars %}
@@ -20,6 +21,7 @@
         <td></a>{{ car.plate }}</td>
         <td>{{ car.year }}</td>
         <td>{{ car.km }}</td>
+        <td>{{ car.final_status }}</td>
     </tr>
     {% endfor %}
 </table>
