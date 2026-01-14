@@ -14,6 +14,6 @@
     <button type="submit">Excluir</button>
 </form>
 
-<a href="/cars/{{ car.id }}/">Cancelar</a>
+<a href="{% url 'car_detail' car.id %}">Cancelar</a>
 
 {% endblock %}
