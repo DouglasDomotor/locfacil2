@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .models.cars import Car
-from .forms import CarForm 
+from cars.models import Car
+from cars.forms import CarForm 
 
 def car_list(request):
     cars = Car.objects.all()
