@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import Client
-from .forms import ClientForm
+from clients.models import Client
+from clients.forms import ClientForm
 
 def client_list(request):
     clients = Client.objects.all()
