@@ -14,6 +14,7 @@ class Car(models.Model):
     status = models.CharField('Status', max_length=20, choices=STATUS_CHOICES, default='operacional')
     purchase_price = models.DecimalField('Valor da compra', max_digits=10, decimal_places=2, null=True, blank=True)
     financed = models.BooleanField('Financiado', default=False)
+    
 
     def __str__(self):
         return f"{self.model} - {self.plate}"
