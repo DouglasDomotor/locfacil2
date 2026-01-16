@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from datetime import date
-from .models import Rental
-from .forms import RentalForm
+from rentals.models import Rental
+from rentals.forms import RentalForm
 
 def rental_list(request):
     contracts = Rental.objects.all()
