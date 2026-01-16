@@ -1,5 +1,5 @@
 from django.db import models
-from cars.models import Car
+from cars.models.cars import Car
 from clients.models import Client
 
 class Rental(models.Model):
