@@ -1,0 +1,1 @@
+from .rentals import Rental
